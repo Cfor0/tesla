@@ -1,38 +1,44 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+section {
+  border-bottom: 1px solid white;
+  padding: 1rem;
+  height: 100vh;
+  scroll-snap-align: start;
   text-align: center;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-container {
+  text-align: center;
+  /* min-height: 100vh; */
+  background-image: url('./images/tesla-home.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-container2 {
+  text-align: center;
+  /* min-height: 100vh; */
+  background-image: url('./images/tesla-home2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.home-container3 {
+  text-align: center;
+  /* min-height: 100vh; */
+  background-image: url('./images/tesla-home3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
