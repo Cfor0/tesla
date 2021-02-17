@@ -21,7 +21,7 @@
   
   .home-container {
     text-align: center;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     background-image: url('../../images/model-s-001.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -29,15 +29,15 @@
   
   .home-container2 {
     text-align: center;
-    /* min-height: 100vh; */
-    background-image: url('../../images/modelY.jpg');
+    min-height: 100vh;
+    background-image: url('../../images/model-y.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
   }
   
   .home-container3 {
     text-align: center;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     background-image: url('../../images/tesla-model-3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
