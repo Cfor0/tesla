@@ -1,21 +1,18 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Home from "./components/Home/Home";
-import { Route } from "react-router-dom";
+
+// Pages
+import Home from "./Pages/Home/Home";
+import Registration from "./Pages/Registration/Registration";
+import Store from "./Pages/Store/Store";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <section className="home-container">
-        <Home></Home>
-      </section>
-      <section className="home-container2">
-        <h1>Section Two</h1>
-      </section>
-      <section className="home-container3">
-        <h1>Section Three</h1>
-      </section>
-    </div>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/login" component={Registration} />
+      <Route exact path="/store" component={Store} />
+    </Switch>
   );
 }
 
