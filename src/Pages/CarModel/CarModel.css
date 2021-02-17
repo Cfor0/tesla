@@ -1,0 +1,16 @@
+#car-banner,
+#car-interior {
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#car-banner {
+  background-image: url("https://www.tesla.com/sites/default/files/images/presskit/model-s-001.jpg?2017");
+}
+
+#car-interior {
+  background-image: url("https://d2eohwa6gpdg50.cloudfront.net/wp-content/uploads/sites/8/2021/02/14165812/screen_shot_2021-01-28_at_10.40.06_copy-1600x900-1-1600x900.jpg");
+}
