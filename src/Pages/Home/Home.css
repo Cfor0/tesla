@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
   html {
     font-family: sans-serif;
     scroll-snap-type: mandatory;
@@ -18,28 +20,30 @@
     text-align: center;
     position: relative;
   }
-  
-  .home-container {
+
+  .home-image {
     text-align: center;
     min-height: 100vh;
-    background-image: url('../../images/model-s-001.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .home-container {
+    background-image: url('../../images/model-s.jpeg');
   }
   
   .home-container2 {
-    text-align: center;
-    min-height: 100vh;
     background-image: url('../../images/model-y.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
   }
   
   .home-container3 {
-    text-align: center;
-    min-height: 100vh;
-    background-image: url('../../images/tesla-model-3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url('../../images/model-3.jpeg');
+    display: flex;
+    flex-direction: column;
+  }
+
+  .last-container {
+    flex: 1;
   }
 
