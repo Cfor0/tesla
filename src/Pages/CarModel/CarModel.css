@@ -1,0 +1,271 @@
+#car-banner,
+#car-interior {
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Banner Contents */
+
+#car-banner {
+    background-image: url("https://lh3.googleusercontent.com/pw/ACtC-3c_uqMOGDuBTkm-AEre1ICvAeW7D8MmqENCJ-zYFmxQhEuIbsXGDSvMYXpYpr2NByhMK34mLz5igGgVnAzJT7rYxIdc5U1GeHlw0-7gGCBvVG3J4Kwo_GRvU0lrjpbonSFjHvdx2kg3lfJb4M3bhiTk=w2344-h1464-no?authuser=0");
+}
+
+#car-banner__header {
+    padding-top: 7rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    width: 100%;
+}
+
+#car-banner__header__title,
+#car-banner__header__title__sub {
+    text-align: center;
+    margin: 0;
+    font-weight: 800;
+    color: #393c41;
+}
+
+#car-banner__header__title__sub {
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+#car-interior {
+    background-image: url("https://d2eohwa6gpdg50.cloudfront.net/wp-content/uploads/sites/8/2021/02/14165812/screen_shot_2021-01-28_at_10.40.06_copy-1600x900-1-1600x900.jpg");
+}
+
+#car-banner__header__bottom,
+.car-banner__header__bottom__start,
+.car-banner__header__bottom__side {
+    position: absolute;
+    bottom: 10%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+#car-banner__header__bottom,
+.car-banner__header__bottom__start {
+    left: 50%;
+}
+
+.car-banner__header__bottom__column,
+.car-banner__header__bottom__column__start {
+    text-align: center;
+    color: white;
+}
+
+.car-banner__header__bottom__side {
+    top: 0;
+    right: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    transform: translateX(0);
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.8));
+    padding: 2rem;
+}
+
+.car-banner__header__bottom__column:nth-child(2) {
+    border-left: white solid 1px;
+    border-right: white solid 1px;
+}
+
+.car-banner__header__bottom__column__start:nth-child(2) {
+    border-left: white solid 1px;
+    border-right: white solid 1px;
+}
+
+.header__column__title {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.header__column__body,
+.header__column__body__start {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.clear__order-now__button {
+    text-transform: uppercase;
+    padding: 10px 40px;
+    background: transparent;
+    border: white solid 3px;
+    font-weight: 900;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.clear__order-now__button:hover {
+    background: white;
+    color: black;
+}
+/* Banner Contents */
+
+/* Safety Contents */
+
+.car-safety,
+.car-safety-reverse {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+}
+
+.car-safety-reverse {
+    grid-template-columns: 5fr 2fr;
+}
+
+.car-safety__container__text {
+    padding: 4rem;
+    position: relative;
+}
+
+.car-safety__container__text__sub {
+    font-weight: 100;
+    font-size: 1.3rem;
+}
+
+.car-safety__container__text__title {
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+}
+
+.car-safety__container__text__image {
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+}
+
+.white__order-now__button,
+.white__order-now__button__rel,
+.white__order-now__button__reverse {
+    position: absolute;
+    bottom: 5rem;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    background: transparent;
+    border: black solid 3px;
+    font-weight: 900;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.white__order-now__button__reverse {
+    left: 4rem;
+}
+
+.white__order-now__button:hover {
+    background: black;
+    color: white;
+}
+
+.white__order-now__button__rel:hover {
+    background: black;
+    color: white;
+}
+
+.white__order-now__button__reverse:hover {
+    background: black;
+    color: white;
+}
+
+.car-safety__container__image,
+.car-safety__container__image-reverse {
+    height: 100vh;
+    background-color: #f2f2f2;
+    background-image: url("https://i.pinimg.com/originals/68/e4/ec/68e4ec0cfa56c6ecc23589a371d9337a.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.car-safety__container__image-reverse {
+    position: relative;
+    background-image: url("https://media.gqmagazine.fr/photos/5e9598ed0b84640008631d9d/16:9/w_1920,c_limit/model-s-performance.jpg");
+    background-size: cover;
+}
+/* Safety Contents */
+
+/* Performance Contents  */
+
+.performance {
+    height: 100vh;
+}
+
+.performance-banner,
+.performance-banner-two,
+.performance-banner-three {
+    position: relative;
+    background-image: url("https://lh3.googleusercontent.com/pw/ACtC-3fDOV7b2CQDqJatn_vF4kiP3JcK1lVifNH2pbEmrufRSZNZajUMb6ZyPqhU4z265FodN-04ipak-bQ7xpsLQO4Rc3Eb8wly2GzFCoT_XwLofP4XtjapEt6fDh3rDwCVnXIncD29T_CZglI-p2oVZBnX=w1723-h969-no?authuser=0");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: 70vh;
+}
+
+.performance-banner-two {
+    background-image: url("https://lh3.googleusercontent.com/pw/ACtC-3fwQ8wpuZG9_Q_1oMxXTQMKIknEdfY1Sxf-slcE4OaW7H8Sr_pHI2PsJ19X3ppvqT-IkB4Lggygu5YQbpToIWh9742VoZGRhY4eBwj4znFNYu9OgSEjdzKDuO3E6UUHn9mc-4bYwsH0qDnPJ1HsqIKb=w1440-h900-no?authuser=0");
+}
+
+.performance-banner-three {
+    background-image: url("https://www.canadianmanufacturing.com/wp-content/uploads/2019/11/Model-Y-White-Interior.jpg");
+}
+
+.car-banner__header__bottom__start {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: start;
+    width: 70%;
+}
+
+.car-banner__header__bottom__column__start {
+    text-align: start;
+    padding: 0 1rem;
+}
+
+.header__column__body__start {
+    display: inline-block;
+}
+
+.performance-footer {
+    height: 30vh;
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+    width: 69%;
+    margin: auto;
+    grid-auto-columns: min-content;
+}
+
+.performance-footer__container__title {
+}
+
+.performance-text {
+}
+
+.white__order-now__button__rel {
+    position: relative;
+    bottom: 0;
+    margin-top: 1rem;
+}
+
+.performance-two {
+}
