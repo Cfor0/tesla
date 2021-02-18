@@ -1,20 +1,32 @@
 import React from "react";
 import "./Home.css";
 import Navigation from "../../components/Navigation/Navigation.js";
+import Title from "../../components/Title/Title";
+import ScrollArrow from "../../components/ScrollArrow/ScrollArrow";
 
-function Home() {
+function Home(props) {
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <div className="App">
         <section className="home-container">
-          <div className="home-container">{/* <h1>tesla</h1> */}</div>
+            <Title
+              title = 'Model S'
+              caption = 'Order Online for Touchless Delivery'            
+            />
+            <ScrollArrow />
         </section>
         <section className="home-container2">
-          <h1>Section Two</h1>
+        <Title
+              title = 'Model Y'
+              caption = 'Order Online for Touchless Delivery'              
+            />
         </section>
         <section className="home-container3">
-          <h1>Section Three</h1>
+        <Title
+              title = 'Model 3' 
+              caption = 'Order Online for Touchless Delivery'             
+            />
         </section>
       </div>
     </>

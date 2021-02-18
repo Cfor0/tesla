@@ -7,10 +7,119 @@
   background-size: cover;
 }
 
+/* Banner Contents */
+
 #car-banner {
-  background-image: url("https://www.tesla.com/sites/default/files/images/presskit/model-s-001.jpg?2017");
+  background-image: url("https://lh3.googleusercontent.com/pw/ACtC-3c_uqMOGDuBTkm-AEre1ICvAeW7D8MmqENCJ-zYFmxQhEuIbsXGDSvMYXpYpr2NByhMK34mLz5igGgVnAzJT7rYxIdc5U1GeHlw0-7gGCBvVG3J4Kwo_GRvU0lrjpbonSFjHvdx2kg3lfJb4M3bhiTk=w2344-h1464-no?authuser=0");
+}
+
+#car-banner__header {
+  padding-top: 7rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  width: 100%;
+}
+
+#car-banner__header__title,
+#car-banner__header__title__sub {
+  text-align: center;
+  margin: 0;
+  font-weight: 800;
+  color: black;
+}
+
+#car-banner__header__title__sub {
+  font-weight: 100;
+  font-size: 1.2rem;
 }
 
 #car-interior {
   background-image: url("https://d2eohwa6gpdg50.cloudfront.net/wp-content/uploads/sites/8/2021/02/14165812/screen_shot_2021-01-28_at_10.40.06_copy-1600x900-1-1600x900.jpg");
 }
+
+#car-banner__header__bottom {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.car-banner__header__bottom__column {
+  text-align: center;
+  color: white;
+}
+
+.car-banner__header__bottom__column:nth-child(2) {
+  border-left: white solid 1px;
+  border-right: white solid 1px;
+}
+
+.header__column__title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.header__column__body {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.header__column__button {
+  text-transform: uppercase;
+  padding: 10px 40px;
+  background: transparent;
+  border: white solid 3px;
+  font-weight: 900;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.header__column__button:hover {
+  background: white;
+  color: black;
+}
+/* Banner Contents */
+
+/* Safety Contents */
+
+#car-safety {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+}
+
+.car-safety__container__text {
+  padding: 4rem;
+}
+
+.car-safety__container__text__sub {
+  font-weight: 100;
+  font-size: 1.3rem;
+}
+
+.car-safety__container__text__title {
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.car-safety__container__image {
+  height: 100vh;
+  background-color: #f2f2f2;
+  background-image: url("https://i.pinimg.com/originals/68/e4/ec/68e4ec0cfa56c6ecc23589a371d9337a.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+/* Safety Contents */
