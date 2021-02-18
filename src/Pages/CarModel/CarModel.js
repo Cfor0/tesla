@@ -5,8 +5,8 @@ import "./CarModel.css";
 
 const CarModel = (props) => {
     return (
-        <div style={{ overflowX: "hidden" }}>
-            <div id="car-banner">
+        <div >
+            <section id="car-banner">
                 <header id="car-banner__header">
                     <h1 id="car-banner__header__title">Model S</h1>
                 </header>
@@ -34,8 +34,8 @@ const CarModel = (props) => {
                     </div>
                 </div>
                 <ScrollArrow />
-            </div>
-            <div className="car-safety">
+            </section>
+            <section className="car-safety">
                 <div className="car-safety__container__text">
                     <h4 className="car-safety__container__text__sub">Safety</h4>
                     <h3 className="car-safety__container__text__title">
@@ -55,8 +55,8 @@ const CarModel = (props) => {
                 </div>
                 <div className="car-safety__container__image"></div>
                 <div className="car-banner__header__title"></div>
-            </div>
-            <div className="performance">
+            </section>
+            <section className="performance">
                 <div className="performance-banner">
                     <div className="car-banner__header__bottom__start">
                         <div className="car-banner__header__bottom__column__start">
@@ -109,8 +109,8 @@ const CarModel = (props) => {
                         </p>
                     </div>
                 </div>
-            </div>
-            <div className="performance">
+            </section>
+            <section className="performance">
                 <div className="performance-banner-two">
                     <div className="car-banner__header__bottom__start">
                         <div className="car-banner__header__bottom__column__start">
@@ -164,8 +164,8 @@ const CarModel = (props) => {
                         </p>
                     </div>
                 </div>
-            </div>
-            <div className="car-safety-reverse">
+            </section>
+            <section className="car-safety-reverse">
                 <div className="car-safety__container__image-reverse">
                     <div className="car-banner__header__bottom__start">
                         <div className="car-banner__header__bottom__column__start">
@@ -214,8 +214,8 @@ const CarModel = (props) => {
                         Order Now
                     </button>
                 </div>
-            </div>
-            <div className="performance">
+            </section>
+            <section className="performance">
                 <div className="performance-banner-three">
                     <div className="car-banner__header__bottom__side">
                         <div className="car-banner__header__bottom__column__start__side">
@@ -266,7 +266,7 @@ const CarModel = (props) => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };
