@@ -1,4 +1,4 @@
-.Registration {
+.login, .CreateAccount {
     margin: 5%;
 }
 
@@ -6,11 +6,21 @@ h1 {
     text-align: center;
     padding: 40px;
 }
-form {
+.Registration {
     box-sizing: border-box;
     margin: auto;
+    max-width: 400px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: inherit;
+    justify-items: center;
+}
+
+form {
+    box-sizing: border-box;
+    max-width: 400px;
+    margin: auto;
     padding: 1% 1% 5% 1%;
-    max-width: 350px;
     font-size: 14px;
     font-weight: 400;
     text-align: inherit;
@@ -19,21 +29,23 @@ form {
 input {
     background-color: #F4F4F4;
     width: 100%;
-    padding: 12px 0;
-    margin: 10px;
+    padding: 13px 5px;
+    margin: 10px 0;
     border: 1px #D2D3D4;
     border-radius: 20px;
     font-size: large;
 }
 
-input[type=submit] {
+.btn {
   background: #4c5bdd;
+  border-radius: 20px;
   color: white;
   font-size: 14px;
   font-weight: bolder;
   font-family: 'Montserrat', sans-serif;
   line-height: 40px;
-  padding: 0;
+  width: 100%;
+  margin: 10px 0;
   position: relative;
   text-align: center;
   cursor: pointer;
@@ -42,7 +54,7 @@ input[type=submit] {
   transition-timing-function: linear;
   }
 
-  input[type=submit]:hover {
+  .btn:hover {
     background-color: #4c5bdd9a;
     color: white;
   }
@@ -79,7 +91,7 @@ input[type=submit] {
     margin-left: 1rem;
   }
 
-.signin {
+.buttonchange {
     background-color: white;
     border: solid 5px black;
     border-radius: 25px;
@@ -87,21 +99,15 @@ input[type=submit] {
     font-weight: bolder;
     font-family: 'Montserrat', sans-serif;
     line-height: 40px;
-    width: 100%;
-    margin: 10px;
-    position: relative;
     text-align: center;
     cursor: pointer;
     transition-property: background;
     transition-duration: 200ms;
     transition-timing-function: linear;
+    width: 100%;
 }
 
-.signin:hover {
+.buttonchange:hover {
     background-color: black;
     color: white;
 }
-
-.signin:active {
-    transform: translateY(4px);
-  }
