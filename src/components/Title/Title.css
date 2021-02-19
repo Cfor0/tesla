@@ -1,5 +1,5 @@
 h1 {
-    margin: 10% 0 0 0;
+    margin: 7% 0 0 0;
     color: #393c41;
     font-size: 42px;
     font-weight: 600;
@@ -10,4 +10,14 @@ h1 {
 h2 {
     font-size: 14px;
     color: #5c5e62;
+}
+
+.title-container {
+    animation: fadeIn ease 2s;
+    -webkit-animation: fadeIn ease 2s; 
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
 }
