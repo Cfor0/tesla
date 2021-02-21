@@ -4,7 +4,9 @@ import "./App.css";
 import Home from "./Pages/Home/Home";
 import CarModel from "./Pages/CarModel/CarModel";
 import Registration from "./Pages/Registration/Registration";
+import Store from "./Pages/Store/Store";
 import Calculator from "./Pages/Calculator/Calculator";
+
 import { Route, Switch } from "react-router-dom";
 
 function App() {
