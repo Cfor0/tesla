@@ -1,0 +1,118 @@
+/* Input  */
+
+#calculator-container__input {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: whitesmoke;
+    padding: 8rem;
+    padding-bottom: 0;
+}
+
+#vehicle-type-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    margin-bottom: 3rem;
+    grid-gap: 1rem;
+}
+
+.vehicle-type,
+.vehicle-type__result {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    background-color: white;
+    border: solid 2px #3696ff;
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    width: 80%;
+}
+
+.vehicle-type__name {
+    font-size: 1.5rem;
+    color: black;
+}
+
+#vehicle-type-input-container__outer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 0 5rem;
+    padding: 2rem;
+    max-width: 100%;
+    margin: 0;
+}
+
+.calculate-btn {
+    grid-column: 1 / -1;
+    position: relative;
+    top: 0;
+    text-align: center;
+    width: auto;
+    justify-self: center;
+    margin-top: 2rem;
+}
+
+.vehicle-type-input-container__inner {
+}
+
+.input-container__inner__label {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.input-container__inner__field {
+    border-radius: 5px;
+    background-color: white;
+}
+
+/* Output  */
+
+#output-title {
+    margin: 0;
+    color: #3696ff;
+}
+
+#calculator-container__output__inner {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.calculator-container__column {
+    justify-self: center;
+    width: 100%;
+    text-align: center;
+}
+
+.vehicle-type__result {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.calculator-container__column h3 {
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 850px) {
+    #calculator-container__input {
+        display: block;
+        grid-template-columns: 1fr;
+        background-color: whitesmoke;
+        padding: 2rem;
+    }
+
+    #vehicle-type-input-container__outer {
+        display: block;
+        width: 100%;
+    }
+
+    .calculate-btn {
+        width: 100%;
+    }
+
+    .calculator-container__column {
+        margin-top: 1rem;
+    }
+}
