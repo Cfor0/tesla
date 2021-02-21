@@ -1,0 +1,188 @@
+/* Input  */
+
+#calculator-container__input {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://www.tesla.com/sites/default/files/images/model-3/model-3-hero.jpg?2017");
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: whitesmoke;
+    padding: 8rem;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+#vehicle-type-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    margin-bottom: 3rem;
+    grid-gap: 1rem;
+}
+
+.vehicle-type,
+.vehicle-type__result {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    width: 80%;
+}
+
+.vehicle-type__name {
+    font-size: 1.5rem;
+    color: black;
+}
+
+#vehicle-type-input-container__outer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 0 5rem;
+    padding: 2rem;
+    max-width: 100%;
+    margin: 0;
+}
+
+.calculate-btn {
+    grid-column: 1 / -1;
+    position: relative;
+    top: 0;
+    text-align: center;
+    width: auto;
+    justify-self: center;
+    margin-top: 2rem;
+}
+
+.vehicle-type-input-container__inner {
+}
+
+.input-container__inner__label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.input-container__inner__field {
+    border-radius: 5px;
+    background-color: white;
+}
+
+/* Output  */
+
+#calculator-container__output {
+    padding-bottom: 8rem;
+}
+
+#output-title {
+    margin: 0;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+#calculator-container__output__inner {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.calculator-container__column {
+    justify-self: center;
+    width: 100%;
+    text-align: center;
+}
+
+.vehicle-type__result {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.calculator-container__column h3 {
+    margin-bottom: 1rem;
+}
+
+/* Input Radio */
+
+.input-radio__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 0 5rem;
+    padding: 2rem;
+    max-width: 100%;
+    margin: 0;
+}
+
+.input-radio__title {
+}
+
+.input-radio {
+    background-color: white;
+    border: solid 2px #d6d6d6;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+    cursor: pointer;
+
+    font-weight: 100;
+    font-size: 1.3rem;
+}
+
+.text__wrapper {
+    padding: 1rem 1rem 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.input {
+    visibility: hidden;
+    margin-top: 0;
+}
+
+.radio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+.radio-overlay:hover,
+.input[type="radio"]:checked ~ .radio-overlay {
+    border: solid 4px #356bff;
+    border-radius: 10px;
+}
+
+/* Media  */
+@media only screen and (max-width: 850px) {
+    #calculator-container__input {
+        display: block;
+        grid-template-columns: 1fr;
+        background-color: whitesmoke;
+        padding: 2rem;
+    }
+
+    #vehicle-type-input-container__outer {
+        display: block;
+        width: 100%;
+    }
+
+    .calculate-btn {
+        width: 100%;
+    }
+
+    .calculator-container__column {
+        margin-top: 1rem;
+    }
+}

@@ -53,6 +53,10 @@
     width: 50%;
 }
 
+.car-banner__header__bottom__column__start__side {
+    text-align: start;
+}
+
 #car-banner__header__bottom,
 .car-banner__header__bottom__start {
     left: 50%;
@@ -133,6 +137,7 @@
 .car-safety__container__text {
     padding: 4rem;
     position: relative;
+    text-align: start;
 }
 
 .car-safety__container__text__sub {
@@ -256,9 +261,11 @@
 }
 
 .performance-footer__container__title {
+    text-align: start;
 }
 
 .performance-text {
+    text-align: start;
 }
 
 .white__order-now__button__rel {

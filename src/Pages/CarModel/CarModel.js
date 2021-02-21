@@ -5,7 +5,7 @@ import "./CarModel.css";
 
 const CarModel = (props) => {
     return (
-        <div >
+        <div>
             <section id="car-banner">
                 <header id="car-banner__header">
                     <h1 id="car-banner__header__title">Model S</h1>
@@ -35,7 +35,7 @@ const CarModel = (props) => {
                 </div>
                 <ScrollArrow />
             </section>
-            <section className="car-safety">
+            <section className="car-safety" style={{ padding: "0" }}>
                 <div className="car-safety__container__text">
                     <h4 className="car-safety__container__text__sub">Safety</h4>
                     <h3 className="car-safety__container__text__title">
@@ -56,7 +56,7 @@ const CarModel = (props) => {
                 <div className="car-safety__container__image"></div>
                 <div className="car-banner__header__title"></div>
             </section>
-            <section className="performance">
+            <section className="performance" style={{ padding: "0" }}>
                 <div className="performance-banner">
                     <div className="car-banner__header__bottom__start">
                         <div className="car-banner__header__bottom__column__start">
@@ -110,7 +110,7 @@ const CarModel = (props) => {
                     </div>
                 </div>
             </section>
-            <section className="performance">
+            <section className="performance" style={{ padding: "0" }}>
                 <div className="performance-banner-two">
                     <div className="car-banner__header__bottom__start">
                         <div className="car-banner__header__bottom__column__start">
@@ -165,7 +165,7 @@ const CarModel = (props) => {
                     </div>
                 </div>
             </section>
-            <section className="car-safety-reverse">
+            <section className="car-safety-reverse" style={{ padding: "0" }}>
                 <div className="car-safety__container__image-reverse">
                     <div className="car-banner__header__bottom__start">
                         <div className="car-banner__header__bottom__column__start">
@@ -215,7 +215,7 @@ const CarModel = (props) => {
                     </button>
                 </div>
             </section>
-            <section className="performance">
+            <section className="performance" style={{ padding: "0" }}>
                 <div className="performance-banner-three">
                     <div className="car-banner__header__bottom__side">
                         <div className="car-banner__header__bottom__column__start__side">
@@ -225,14 +225,14 @@ const CarModel = (props) => {
                                 time
                             </span>
                         </div>
-                        <div className="car-banner__header__bottom__column__startt__side">
+                        <div className="car-banner__header__bottom__column__start__side">
                             <h2 className="header__column__title">Software</h2>
                             <span className="header__column__body__start">
                                 Over-the-air software updates introduce new
                                 features, functionality and performance
                             </span>
                         </div>
-                        <div className="car-banner__header__bottom__column__startt__side">
+                        <div className="car-banner__header__bottom__column__start__side">
                             <h2 className="header__column__title">UV</h2>
                             <span className="header__column__body__start">
                                 An expansive Glass Roof provides more headroom
