@@ -1,4 +1,5 @@
 import React from 'react'
+import './Contact.css'
 
 class Contact extends React.Component {
     constructor() {
@@ -78,7 +79,8 @@ class Contact extends React.Component {
         return (
             <div className='wrapper'>
                 <div className='form-wrapper'>
-                    <h2>Contact Form</h2>
+                    <h2>Contact</h2> <br />
+                    <p>Submit a question or comment:</p>
                     <form onSubmit={this.handleSubmit}>
 
                         <div className="form-group">
@@ -89,7 +91,6 @@ class Contact extends React.Component {
                                 value={this.state.input.name}
                                 onChange={this.handleChange}
                                 class="form-control"
-                                placeholder="Enter name"
                                 id="name" />
 
                             <div className="text-danger">{this.state.errors.name}</div>
@@ -103,7 +104,6 @@ class Contact extends React.Component {
                                 value={this.state.input.email}
                                 onChange={this.handleChange}
                                 class="form-control"
-                                placeholder="Enter email"
                                 id="email" />
 
                             <div className="text-danger">{this.state.errors.email}</div>
@@ -121,7 +121,7 @@ class Contact extends React.Component {
                             <div className="text-danger">{this.state.errors.comment}</div>
                         </div>
 
-                        <input type="submit" value="Submit" class="btn btn-success" />
+                        <button type="button" value="Submit" class="btn btn-success">SUBMIT</button>
                     </form>
                 </div>
             </div>
