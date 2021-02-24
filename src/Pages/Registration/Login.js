@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './Registration.css';
-import Axios from 'axios';
+import React, { Component } from "react";
+import "./Registration.css";
+import Axios from "axios";
 
 class Login extends Component {
     // constructor(props) {
@@ -8,52 +8,64 @@ class Login extends Component {
     // }
     state = {
         email: "",
-        password: ""
-    }
+        password: "",
+    };
 
-    handleEmail=(event)=>{
-        this.setState({email: event.target.value});
-    }
-    handlePassword=(event)=>{
-        this.setState({password: event.target.value});
-    }
-    
-    handleLogin =(event) => {
+    handleEmail = (event) => {
+        this.setState({ email: event.target.value });
+    };
+    handlePassword = (event) => {
+        this.setState({ password: event.target.value });
+    };
+
+    handleLogin = (event) => {
         event.preventDefault();
-  
 
         let user = {
-            email:this.state.email,
-            password:this.state.password
-        }
+            email: this.state.email,
+            password: this.state.password,
+        };
 
-        Axios.get(`http://localhost:4000/createAccount/${user.email}/${user.password}` )
-        .then(res => {
+        Axios.get(
+            `http://localhost:4000/createAccount/${user.email}/${user.password}`
+        ).then((res) => {
             console.log(res);
-            console.log(res.data)
-            console.log(user)
-        })
-    }
-
+            console.log(res.data);
+            console.log(user);
+        });
+    };
 
     render() {
-        
         return (
             <div className="login" ref={this.props.containerRef}>
                 <form>
-                <h1 className="contactHead">Sign In</h1>
+                    <h1 className="contactHead">Sign In</h1>
                     <label htmlFor="email">Email</label>
-                    <input type="text" name="email" onChange={this.handleEmail} />
+                    <input
+                        type="text"
+                        name="email"
+                        onChange={this.handleEmail}
+                    />
                     <br />
                     <label htmlFor="password">Password</label>
-                    <input type="text" name="password"  onChange={this.handlePassword} />
+                    <input
+                        type="text"
+                        name="password"
+                        onChange={this.handlePassword}
+                    />
                     <br />
-                    <button type="button" className="btn" onClick={this.handleLogin}>SIGN IN</button>
+                    <button
+                        type="button"
+                        className="btn"
+                        onClick={this.handleLogin}
+                    >
+                        SIGN IN
+                    </button>
 
                     <div className="separator">OR</div>
-            </form>
+                </form>
             </div>
-        )
+        );
     }
 }
 
