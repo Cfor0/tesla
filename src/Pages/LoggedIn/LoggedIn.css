@@ -1,0 +1,18 @@
+#logged-in__main-container {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: red;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        url("https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2020/01/0/0/AP20007425441599-e1578401002408.jpg?ve=1&tl=1"); */
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    justify-content: start;
+    padding: 5rem;
+}
+
+#logged-in__main-container h1 {
+    margin: 0;
+    color: red;
+    /* color: red; */
+}
