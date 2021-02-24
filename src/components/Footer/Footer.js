@@ -1,15 +1,25 @@
 import React from 'react';
 import './Footer.css'
 
-function Footer () {
+function Footer() {
     return (
         <div className='footer-container'>
             <ul>
-                <li>Tesla © 2021</li>
-                <li>Contact</li>
-                <li>Careers</li>
-                <li>News</li>
-                <li>Locations</li>
+                <li>
+                    <a href="#" className="fa fa-facebook"></a>
+                </li>
+                <li>
+                    <a href="#" className="fa fa-twitter"></a>
+                </li>
+                <li>
+                    <a href="#" className="fa fa-instagram"></a>
+                </li>
+                <li>
+                    <a href="#" className="fa fa-youtube"></a>
+                </li>
+                <li>
+                    <a href="#" className='footer-contact'>Contact</a>
+                </li>
             </ul>
         </div>
     )
