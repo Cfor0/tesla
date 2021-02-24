@@ -15,12 +15,13 @@ function Navigation() {
             <p>Model 3</p>
             <p>Model X</p>
             <p>Model Y</p>
-            <p>Solar Roof</p>
-            <p>Solar Panels</p>
+            {/* <p>Solar Roof</p> */}
+            {/* <p>Solar Panels</p> */}
+            <p>EV Calculator</p>
           </div>
 
         <div className="header-right">
-          <p>Shop</p>
+          {/* <p>Shop</p> */}
           <p>Tesla Account</p>
 
         </div>
