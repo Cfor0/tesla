@@ -1,0 +1,56 @@
+.header{
+    display: flex;
+    background-color: transparent;
+    background: none;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    margin: 15px;
+    margin-top: 15px;
+    z-index: 100;
+}
+
+.header-logo{
+    height: 24px;    
+    width: 100px;
+    margin-top: 5px;
+}
+
+.tesla-logo{
+    width: 100px;
+    height: 30px;
+    opacity: 1;
+}
+
+.header-center{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+.header-center>p{
+    margin: 10px;
+    text-transform: uppercase;
+}
+
+.header-center>p:hover{
+    cursor: pointer;
+}
+
+.header-right{
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    /* margin: 10px; */
+}
+
+.header-right>p{
+    padding-right: 35px;
+    margin: 10px;
+}
+
+.header-right>p:hover{
+    cursor: pointer;
+}
+

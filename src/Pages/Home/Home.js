@@ -8,7 +8,7 @@ import Footer from '../../components/Footer/Footer';
 function Home() {
   return (
     <>
-      {/* <Navigation /> */}
+      <Navigation />
       <div className="App">
         <section className="home-container home-image">
           <Title
