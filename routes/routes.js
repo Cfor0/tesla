@@ -6,8 +6,8 @@ const mysql = require("mysql");
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "db_password",
-    database: "db_name",
+    password: "password",
+    database: "tesla_db",
 });
 
 // Establish Database Connection
@@ -23,5 +23,43 @@ db.connect((err) => {
 router.get("/", (req, res) => {
     res.send("Hello World From Root");
 });
+ 
+router.post('/createAccount', (req, res)=> {
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+    const password = req.body.password;
+   
+    
+    db.query("INSERT INTO create_account (user_first_name, user_last_name, email_address, user_password) VALUES(?,?,?,?)", 
+        [firstName,
+        lastName,
+        email,
+        password],
+        (err,result) => {console.log(err)},
+        res.send("Created Account")
+    );
+    
+});
+
+router.get('/createAccount/:email/:password', (req, res) => {
+    const email = req.params.email;
+    const password = req.params.password;
+
+    db.query('SELECT * FROM create_account ', ((err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            let userArray = Object.keys(result);
+            userArray.filter(item => {
+                let user = result[item]
+                if (user.email_address === email && user.user_password === password) {
+                    console.log(user);
+                    res.send(user);
+                };
+            });
+        };
+    }));
+})
 
 module.exports = router;
