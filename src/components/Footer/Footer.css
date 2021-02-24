@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 .footer-container li {
@@ -15,6 +16,8 @@
 
 .footer-container a {
     list-style: none;
+    text-decoration: none;
+    
 }
 
 .fa {
@@ -26,7 +29,7 @@
     border-radius: 50%;
 }
 
-.fa:hover {
+.fa:hover, a:hover {
     opacity: 0.7;
 }
   
@@ -49,4 +52,8 @@
 .fa-youtube {
     background: #bb0001;
     color: white;
+}
+
+.footer-contact {
+    color: #125688;;
 }

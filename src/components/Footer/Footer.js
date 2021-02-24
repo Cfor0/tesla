@@ -17,6 +17,9 @@ function Footer() {
                 <li>
                     <a href="#" className="fa fa-youtube"></a>
                 </li>
+                <li>
+                    <a href="#" className='footer-contact'>Contact</a>
+                </li>
             </ul>
         </div>
     )
