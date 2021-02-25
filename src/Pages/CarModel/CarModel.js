@@ -41,7 +41,10 @@ const CarModel = (props) => {
                     <h3 className="car-safety__container__text__title">
                         Designed for Safety
                     </h3>
-                    <p className="car-safety__container__text__body">
+                    <p
+                        className="car-safety__container__text__body"
+                        style={{ textAlign: "start" }}
+                    >
                         Safety is the most important part of the overall Model 3
                         design. The metal structure is a combination of aluminum
                         and steel, for maximum strength in every area. In a
@@ -98,7 +101,7 @@ const CarModel = (props) => {
                     </div>
 
                     <div className="performance-text">
-                        <p>
+                        <p style={{ textAlign: "start" }}>
                             Model 3 comes with the option of dual motor
                             all-wheel drive, 20” Überturbine Wheels and
                             Performance Brakes and lowered suspension for total
@@ -154,7 +157,7 @@ const CarModel = (props) => {
                     </div>
 
                     <div className="performance-text">
-                        <p>
+                        <p style={{ textAlign: "start" }}>
                             Tesla All-Wheel Drive has two independent motors for
                             improved redundancy, each with only one moving part
                             for minimal maintenance and maximum durability.
@@ -196,7 +199,10 @@ const CarModel = (props) => {
                     <h3 className="car-safety__container__text__title">
                         Go Anywhere
                     </h3>
-                    <p className="car-safety__container__text__body">
+                    <p
+                        className="car-safety__container__text__body"
+                        style={{ textAlign: "start" }}
+                    >
                         Model 3 is fully electric, so you never need to visit a
                         gas station again. If you charge overnight at home, you
                         can wake up to a full battery every morning. And when
@@ -257,7 +263,7 @@ const CarModel = (props) => {
                     </div>
 
                     <div className="performance-text">
-                        <p>
+                        <p style={{ textAlign: "start" }}>
                             The inside of Model 3 is unlike any other car. You
                             can use your smartphone as a key, and access all
                             driver controls in the central 15-inch touchscreen.

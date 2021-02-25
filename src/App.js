@@ -9,6 +9,7 @@ import Contact from "./Pages/Contact/Contact";
 import LoggedIn from "./Pages/LoggedIn/LoggedIn";
 
 import { Route, Switch } from "react-router-dom";
+import Navigation from "./components/Navigation/Navigation";
 
 function App() {
     // Checks local storage value to determine if user is logged in
@@ -16,16 +17,19 @@ function App() {
     console.log(loggedIn);
 
     return (
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Registration} />
-            {loggedIn !== null && (
-                <Route exact path="/logged-in" component={LoggedIn} />
-            )}
-            <Route exact path="/models" component={CarModel} />
-            <Route exact path="/calculator" component={Calculator} />
-            <Route exact path="/contact" component={Contact} />
-        </Switch>
+        <>
+            <Navigation />
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/login" component={Registration} />
+                {loggedIn !== null && (
+                    <Route exact path="/logged-in" component={LoggedIn} />
+                )}
+                <Route exact path="/models" component={CarModel} />
+                <Route exact path="/calculator" component={Calculator} />
+                <Route exact path="/contact" component={Contact} />
+            </Switch>
+        </>
     );
 }
 
