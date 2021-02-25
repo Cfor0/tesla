@@ -11,11 +11,17 @@ import LoggedIn from "./Pages/LoggedIn/LoggedIn";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
+    // Checks local storage value to determine if user is logged in
+    let loggedIn = sessionStorage.getItem("loggedIn");
+    console.log(loggedIn);
+
     return (
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Registration} />
-            <Route exact path="/logged-in" component={LoggedIn} />
+            {loggedIn !== null && (
+                <Route exact path="/logged-in" component={LoggedIn} />
+            )}
             <Route exact path="/models" component={CarModel} />
             <Route exact path="/calculator" component={Calculator} />
             <Route exact path="/contact" component={Contact} />
