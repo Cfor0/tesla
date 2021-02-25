@@ -1,18 +1,71 @@
-#logged-in__main-container {
-    height: 100vh;
+
+h1{
+    margin: 0px;
+    padding: 0px;
+}
+
+.main-container {
+    padding-top: 200px;
+    height: 50vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
     /* background-color: red;
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
         url("https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2020/01/0/0/AP20007425441599-e1578401002408.jpg?ve=1&tl=1"); */
     background-size: cover;
     background-position: center;
-    display: grid;
-    justify-content: start;
-    padding: 5rem;
 }
 
-#logged-in__main-container h1 {
-    margin: 0;
-    color: red;
-    /* color: red; */
+.mc-login{
+    height: 500px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logged-in__h1 {
+    text-align: center;
+    color: black;
+}
+
+.logged-in__second-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.loggedin-img{
+    height: 200px;
+    width: 200px;
+    margin-right: 50px;
+    background-repeat: no-repeat;
+    background-image: url("../../images/X5NY.gif");
+    background-position: center; /* Center the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.button-one{
+    background-color: white;
+    color:black;
+    padding: 5px 15px;
+    border-radius: 7px;
+    outline: 0;
+    width: 150px;
+    height: 30px;
+    margin: 25px 10px;
+}
+
+.button-two{
+    background-color: white;
+    color:black;
+    padding: 5px 15px;
+    border-radius: 7px;
+    outline: 0;
+    width: 150px;
+    height: 30px;
+    margin: 10px 10px;
+
 }
