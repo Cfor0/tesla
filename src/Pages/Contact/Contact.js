@@ -79,7 +79,7 @@ class Contact extends React.Component {
         return (
             <div className='wrapper'>
                 <div className='form-wrapper'>
-                    <h2>Contact</h2> <br />
+                    <h2>Contact</h2>
                     <p>Submit a question or comment:</p>
                     <form onSubmit={this.handleSubmit}>
 
