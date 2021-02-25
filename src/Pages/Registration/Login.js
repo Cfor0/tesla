@@ -32,6 +32,8 @@ class Login extends Component {
             console.log(res);
             console.log(res.data);
             console.log(user);
+            // On trigger of this method will set the loggedIn session to true
+            sessionStorage.setItem("loggedIn", true);
         });
     };
 
