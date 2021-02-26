@@ -1,4 +1,5 @@
-.login, .CreateAccount {
+.login,
+.CreateAccount {
     margin: 5%;
 }
 
@@ -9,6 +10,7 @@ h1 {
 .Registration {
     box-sizing: border-box;
     margin: auto;
+    margin-top: 7rem;
     max-width: 400px;
     font-size: 14px;
     font-weight: 400;
@@ -27,69 +29,69 @@ form {
 }
 
 input {
-    background-color: #F4F4F4;
+    background-color: #f4f4f4;
     width: 100%;
     padding: 13px 5px;
     margin: 10px 0;
-    border: 1px #D2D3D4;
+    border: 1px #d2d3d4;
     border-radius: 20px;
     font-size: large;
 }
 
 .btn {
-  background: #4c5bdd;
-  border-radius: 20px;
-  color: white;
-  font-size: 14px;
-  font-weight: bolder;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 40px;
-  width: 100%;
-  margin: 10px 0;
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-  transition-property: background;
-  transition-duration: 200ms;
-  transition-timing-function: linear;
-  }
+    background: #4c5bdd;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: bolder;
+    font-family: "Montserrat", sans-serif;
+    line-height: 40px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    transition-property: background;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
+}
 
-  .btn:hover {
+.btn:hover {
     background-color: #4c5bdd9a;
     color: white;
-  }
+}
 
-  .error {
-    color:#db2222;
-    font-size: .8em;
+.error {
+    color: #db2222;
+    font-size: 0.8em;
     font-weight: bold;
     display: relative;
-  }
+}
 
-  .form-status {
-      text-align: center;
-  }
+.form-status {
+    text-align: center;
+}
 
-  .separator {
+.separator {
     display: flex;
     align-items: center;
     text-align: center;
     font-size: 12px;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-  }
-  .separator::before,
-  .separator::after {
+}
+.separator::before,
+.separator::after {
     content: "";
     flex: 1;
     border-bottom: 1px solid #ced4da;
-  }
-  .separator::before {
+}
+.separator::before {
     margin-right: 1rem;
-  }
-  .separator::after {
+}
+.separator::after {
     margin-left: 1rem;
-  }
+}
 
 .buttonchange {
     background-color: white;
@@ -97,7 +99,7 @@ input {
     border-radius: 25px;
     font-size: 14px;
     font-weight: bolder;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     line-height: 40px;
     text-align: center;
     cursor: pointer;

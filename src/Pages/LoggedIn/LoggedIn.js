@@ -1,21 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./LoggedIn.css";
 
-function clickMe() {
-    alert("You clicked me!");
-}
+const LoggedIn = (props) => {
+    const signOut = () => {
+        sessionStorage.removeItem("loggedIn");
+        props.history.push("/login");
+    };
 
-const LoggedIn = () => {
+    const takeALookHandler = () => {
+        props.history.push("/models");
+    };
     return (
         <div className="main-container">
             <div className="mc-login">
                 <div className="logged-in__second-container">
                     <h1 className="logged-in__h1">You Just Landed!</h1>
 
-                    <button className="button-one" onClick={clickMe}>
+                    <button className="button-one" onClick={signOut}>
                         Sign Off
                     </button>
-                    <button className="button-two" onClick={clickMe}>
+                    <button className="button-two" onClick={takeALookHandler}>
                         Take A Look
                     </button>
                 </div>

@@ -14,10 +14,15 @@ h2 {
 
 .title-container {
     animation: fadeIn ease 2s;
-    -webkit-animation: fadeIn ease 2s; 
+    -webkit-animation: fadeIn ease 2s;
+    margin-top: 7rem;
 }
 
 @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

@@ -1,14 +1,13 @@
-import React from 'react'
-import './Contact.css'
+import React from "react";
+import "./Contact.css";
 
 class Contact extends React.Component {
     constructor() {
         super();
         this.state = {
             input: {},
-            errors: {}
+            errors: {},
         };
-
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,7 +18,7 @@ class Contact extends React.Component {
         input[event.target.name] = event.target.value;
 
         this.setState({
-            input
+            input,
         });
     }
 
@@ -35,7 +34,7 @@ class Contact extends React.Component {
             input["comment"] = "";
             this.setState({ input: input });
 
-            alert('The Form has submited');
+            alert("The Form has submited");
         }
     }
 
@@ -55,8 +54,9 @@ class Contact extends React.Component {
         }
 
         if (typeof input["email"] !== "undefined") {
-
-            var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+            var pattern = new RegExp(
+                /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+            );
             if (!pattern.test(input["email"])) {
                 isValid = false;
                 errors["email"] = "Please enter valid email address.";
@@ -69,7 +69,7 @@ class Contact extends React.Component {
         }
 
         this.setState({
-            errors: errors
+            errors: errors,
         });
 
         return isValid;
@@ -77,57 +77,69 @@ class Contact extends React.Component {
 
     render() {
         return (
-            <div className='wrapper'>
-                <div className='form-wrapper'>
+            <div className="wrapper">
+                <div className="form-wrapper">
                     <h2>Contact</h2>
                     <p>Submit a question or comment:</p>
                     <form onSubmit={this.handleSubmit}>
-
                         <div className="form-group">
-                            <label for="name">Name:</label> <br />
+                            <label htmlFor="name">Name:</label> <br />
                             <input
                                 type="text"
                                 name="name"
                                 value={this.state.input.name}
                                 onChange={this.handleChange}
-                                class="form-control"
-                                id="name" />
-
-                            <div className="text-danger">{this.state.errors.name}</div>
+                                className="form-control"
+                                id="name"
+                            />
+                            <div className="text-danger">
+                                {this.state.errors.name}
+                            </div>
                         </div>
 
                         <div className="form-group">
-                            <label for="email">Email:</label> <br />
+                            <label htmlFor="email">Email:</label> <br />
                             <input
                                 type="text"
                                 name="email"
                                 value={this.state.input.email}
                                 onChange={this.handleChange}
-                                class="form-control"
-                                id="email" />
-
-                            <div className="text-danger">{this.state.errors.email}</div>
+                                className="form-control"
+                                id="email"
+                            />
+                            <div className="text-danger">
+                                {this.state.errors.email}
+                            </div>
                         </div>
 
                         <div className="form-group">
-                            <label for="comment">Comment:</label><br />
+                            <label htmlFor="comment">Comment:</label>
+                            <br />
                             <textarea
                                 name="comment"
                                 value={this.state.input.comment}
                                 onChange={this.handleChange}
                                 placeholder="Enter comment"
-                                class="form-control" />
+                                className="form-control"
+                            />
 
-                            <div className="text-danger">{this.state.errors.comment}</div>
+                            <div className="text-danger">
+                                {this.state.errors.comment}
+                            </div>
                         </div>
 
-                        <button type="button" value="Submit" class="btn btn-success">SUBMIT</button>
+                        <button
+                            type="button"
+                            value="Submit"
+                            className="btn btn-success"
+                        >
+                            SUBMIT
+                        </button>
                     </form>
                 </div>
             </div>
-            
         );
     }
 }
 
-export default Contact; 
+export default Contact;
