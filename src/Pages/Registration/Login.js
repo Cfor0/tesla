@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Registration.css";
 import Axios from "axios";
+import { withRouter } from "react-router-dom";
 
 class Login extends Component {
     // constructor(props) {
@@ -34,6 +35,8 @@ class Login extends Component {
             console.log(user);
             // On trigger of this method will set the loggedIn session to true
             sessionStorage.setItem("loggedIn", true);
+            this.props.history.push("/logged-in");
+            window.location.reload(false);
         });
     };
 
@@ -56,6 +59,7 @@ class Login extends Component {
                         onChange={this.handlePassword}
                     />
                     <br />
+                    {/* <Link to="/logged-in"> */}
                     <button
                         type="button"
                         className="btn"
@@ -63,6 +67,7 @@ class Login extends Component {
                     >
                         SIGN IN
                     </button>
+                    {/* </Link> */}
 
                     <div className="separator">OR</div>
                 </form>
@@ -71,4 +76,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);
