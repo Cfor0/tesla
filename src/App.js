@@ -14,7 +14,7 @@ import Navigation from "./components/Navigation/Navigation";
 function App() {
     // Checks local storage value to determine if user is logged in
     let loggedIn = sessionStorage.getItem("loggedIn");
-    console.log(loggedIn);
+    console.log("User Logged In: " + loggedIn);
 
     return (
         <>

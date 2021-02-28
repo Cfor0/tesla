@@ -13,7 +13,7 @@ function Navigation() {
                         className="tesla-logo"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 342 35"
-                        preserveAspectRatio="xMidYMid Meet"
+                        // preserveAspectRatio="xMidYMid Meet"
                         width="342"
                         height="35"
                     >
