@@ -27,16 +27,18 @@ class Login extends Component {
             password: this.state.password,
         };
 
-        Axios.get(
-            `http://localhost:4000/createAccount/${user.email}/${user.password}`
-        ).then((res) => {
-            console.log(res);
-            console.log(res.data);
-            console.log(user);
-            // On trigger of this method will set the loggedIn session to true
-            sessionStorage.setItem("loggedIn", true);
-            this.props.history.push("/logged-in");
-            window.location.reload(false);
+        Axios.post(`http://localhost:4000/login`, user).then((res) => {
+            // console.log(res);
+            // console.log(res.data);
+            if (res.data === "Success") {
+                console.log("It works, save the data");
+                // On trigger of this method will set the loggedIn session to true
+                sessionStorage.setItem("loggedIn", true);
+                this.props.history.push("/logged-in");
+                window.location.reload(false);
+            } else {
+                alert("Keep trying");
+            }
         });
     };
 

@@ -1,84 +1,173 @@
-import React, { Component } from 'react';
-import Axios from 'axios';
-import './Registration.css'
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import Axios from "axios";
+import "./Registration.css";
 
 class CreateAccount extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-        state = {
-            firstName:"",
-            lastName:"",
-            email: "",
-            password: ""
+    constructor(props) {
+        super(props);
+        this.state = {
+            input: {},
+            errors: {},
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleCreateAccount = this.handleCreateAccount.bind(this);
+        // this.validate=this.validate.bind(this)
+    }
+
+    handleChange(event) {
+        let input = this.state.input;
+        input[event.target.name] = event.target.value;
+
+        this.setState({
+            input,
+        });
+        // console.log(input)
+    }
+
+    handleCreateAccount = (event) => {
+        event.preventDefault();
+
+        if (this.validate()) {
+            // console.log(this.state);
+
+            let input = {};
+            input["firstName"] = this.state.input.firstName;
+            input["lastName"] = this.state.input.lastName;
+            input["email"] = this.state.input.email;
+            input["password"] = this.state.input.password;
+            this.setState({ input: input });
+            // console.log(input);
+
+            Axios.post("http://localhost:4000/createAccount", input).then(
+                (res) => {
+                    console.log(res);
+                    console.log(res.data);
+                    this.props.history.push("/login");
+                    // console.log(this.props);
+                    console.log("Should move to next page");
+                }
+            );
+
+            // input = {};
+            // input["firstName"] = "";
+            // input["lastName"] = "";
+            // input["email"] = "";
+            // input["password"] = "";
+            // this.setState({ input: input });
+            // console.log(input)
+
+            // alert('The Form has submited');
+        }
+    };
+
+    validate() {
+        let input = this.state.input;
+        let errors = {};
+        let isValid = true;
+
+        if (!input["firstName"]) {
+            isValid = false;
+            errors["firstName"] = "Please enter your name.";
         }
 
-        handleFirstName=(event)=>{
-            this.setState({firstName: event.target.value});
+        if (!input["lastName"]) {
+            isValid = false;
+            errors["lastName"] = "Please enter your last name.";
         }
 
-        handleLastName=(event)=>{
-            this.setState({lastName: event.target.value});
+        if (!input["email"]) {
+            isValid = false;
+            errors["email"] = "Please enter your email.";
         }
 
-        handleEmail=(event)=>{
-            this.setState({email: event.target.value});
-        }
-        handlePassword=(event)=>{
-            this.setState({password: event.target.value});
+        if (!input["password"]) {
+            isValid = false;
+            errors["password"] = "Please enter your correct password.";
         }
 
-        createAccount =(event) => {
-            event.preventDefault();
-      
+        this.setState({
+            errors: errors,
+        });
 
-            let user = {
-                firstName:this.state.firstName,
-                lastName:this.state.lastName,
-                email:this.state.email,
-                password:this.state.password
-            }
+        return isValid;
+    }
 
-            Axios.post("http://localhost:4000/createAccount", user)
-            .then(res => {
-                console.log(res);
-                console.log(res.data)
-                console.log(user)
-            })
-        }
-    
-
-    
-
-    
-
-        
-        render() {
-            return (
-                <div className="CreateAccount" ref={this.props.containerRef}>
-                    <h1 className="contactHead">Create Account</h1>
-                    <form >
+    render() {
+        return (
+            <div className="CreateAccount" ref={this.props.containerRef}>
+                <h1 className="contactHead">Create Account</h1>
+                <form>
+                    <div>
                         <label htmlFor="firstnName">First Name</label>
-                        <input type="text" name="firstName"  onChange={this.handleFirstName}/>
-                            <br />
+                        <input
+                            type="text"
+                            name="firstName"
+                            value={this.state.input.firstName}
+                            onChange={this.handleChange}
+                        />
+                        <br />
+                        <span style={{ color: "red" }}>
+                            {this.state.errors.firstName}
+                        </span>
+                    </div>
+                    <br />
+                    <div>
                         <label htmlFor="lastName">Last Name</label>
-                        <input type="text" name="lastName"  onChange={this.handleLastName}/>
-                            <br />
-                            <label htmlFor="email">Email</label>
-                            <input type="text" name="email"  onChange={this.handleEmail}/>
+                        <input
+                            type="text"
+                            name="lastName"
+                            value={this.state.input.lastName}
+                            onChange={this.handleChange}
+                        />
                         <br />
+                        <span style={{ color: "red" }}>
+                            {this.state.errors.lastName}
+                        </span>
+                    </div>
+                    <br />
+                    <div>
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="text"
+                            name="email"
+                            value={this.state.input.email}
+                            onChange={this.handleChange}
+                        />
+                        <br />
+                        <span style={{ color: "red" }}>
+                            {this.state.errors.email}
+                        </span>
+                    </div>
+                    <br />
+                    <div>
                         <label htmlFor="password">Password</label>
-                        <input type="text" name="password"  onChange={this.handlePassword}/>
+                        <input
+                            type="text"
+                            name="password"
+                            value={this.state.input.password}
+                            onChange={this.handleChange}
+                        />
                         <br />
-                        <button type="button" className="btn" onClick={this.createAccount}>Create Account</button>
-                        <br />
-
-                        <div className="separator">OR</div>
-                    </form>
-                </div>
-            )
-        }
-    
+                        <span style={{ color: "red" }}>
+                            {this.state.errors.password}
+                        </span>
+                    </div>
+                    <br />
+                    <button
+                        type="button"
+                        className="btn"
+                        onClick={this.handleCreateAccount}
+                    >
+                        Create Account
+                    </button>
+                    <br />
+                    <div className="separator">OR</div>
+                </form>
+            </div>
+        );
+    }
 }
 
-export default CreateAccount;
+export default withRouter(CreateAccount);
