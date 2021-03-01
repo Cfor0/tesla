@@ -36,7 +36,7 @@ router.post("/createAccount", (req, res) => {
         (err, result) => {
             console.log(err);
         },
-        res.send("Created Account")
+        res.send(req.body)
     );
 });
 
@@ -46,7 +46,7 @@ router.get("/createAccount/:email/:password", (req, res) => {
 
     db.query("SELECT * FROM create_account ", (err, result) => {
         if (err) {
-            console.log(err);
+           res.send({err: err});
         } else {
             let userArray = Object.keys(result);
             userArray.filter((item) => {
@@ -57,6 +57,8 @@ router.get("/createAccount/:email/:password", (req, res) => {
                 ) {
                     console.log(user);
                     res.send(user);
+                } else {
+                    res.send({message: "Wrong login Information!"})
                 }
             });
         }
