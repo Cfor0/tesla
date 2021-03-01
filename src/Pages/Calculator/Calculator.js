@@ -186,7 +186,11 @@ class Calculator extends Component {
                         <>
                             <h1
                                 id="output-title"
-                                style={{ fontSize: "2rem", color: "black" }}
+                                style={{
+                                    fontSize: "2rem",
+                                    color: "black",
+                                    marginBottom: "3rem",
+                                }}
                             >
                                 Benefits of switching to an electric car
                             </h1>
