@@ -3,81 +3,147 @@ import Axios from 'axios';
 import './Registration.css'
 
 class CreateAccount extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-        state = {
-            firstName:"",
-            lastName:"",
-            email: "",
-            password: ""
+    constructor(props) {
+        super(props);
+        this.state = {
+            input: {},
+            errors: {}
         }
 
-        handleFirstName=(event)=>{
-            this.setState({firstName: event.target.value});
-        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleCreateAccount = this.handleCreateAccount.bind(this);
+        // this.validate=this.validate.bind(this)
+    }
+        
+    
+    
+    handleChange(event) {
+        let input = this.state.input;
+        input[event.target.name] = event.target.value;
+    
+        this.setState({
+            input
+        }) 
+        // console.log(input)
+         
+    }
 
-        handleLastName=(event)=>{
-            this.setState({lastName: event.target.value});
-        }
 
-        handleEmail=(event)=>{
-            this.setState({email: event.target.value});
-        }
-        handlePassword=(event)=>{
-            this.setState({password: event.target.value});
-        }
+    handleCreateAccount = (event) => {
+        event.preventDefault();
+    
 
-        createAccount =(event) => {
-            event.preventDefault();
-      
-
-            let user = {
-                firstName:this.state.firstName,
-                lastName:this.state.lastName,
-                email:this.state.email,
-                password:this.state.password
-            }
-
-            Axios.post("http://localhost:4000/createAccount", user)
+        if (this.validate()) {
+            // console.log(this.state);
+            
+            
+            let input = {};
+            input["firstName"] = this.state.input.firstName;
+            input["lastName"] = this.state.input.lastName;
+            input["email"] = this.state.input.email;
+            input["password"] = this.state.input.password;
+            this.setState({ input: input });
+            console.log(input)
+            
+            Axios.post("http://localhost:4000/createAccount", input)
             .then(res => {
                 console.log(res);
                 console.log(res.data)
-                console.log(user)
             })
+
+            input = {};
+            input["firstName"] = "";
+            input["lastName"] = "";
+            input["email"] = "";
+            input["password"] = "";
+            this.setState({ input: input });
+            console.log(input)
+            
+            // alert('The Form has submited');
+
+        }
+        
+        
+            
+    }
+
+    validate() {
+        let input = this.state.input;
+        let errors = {};
+        let isValid = true;
+    
+        if (!input["firstName"]) {
+            isValid = false;
+            errors["firstName"] = "Please enter your name.";
         }
     
+        if (!input["lastName"]) {
+            isValid = false;
+            errors["lastName"] = "Please enter your last name.";
+        }
+    
+        if (!input["email"]) {
+            isValid = false;
+            errors["email"] = "Please enter your email.";
+        }
+    
+        if (!input["password"]) {
+            isValid = false;
+            errors["password"] = "Please enter your correct password.";
+        }
+    
+        this.setState({
+            errors: errors
+        });
+    
+        return isValid;
+    }
 
     
 
     
 
         
-        render() {
-            return (
-                <div className="CreateAccount" ref={this.props.containerRef}>
-                    <h1 className="contactHead">Create Account</h1>
-                    <form >
+    render() {
+        return (
+            <div className="CreateAccount" ref={this.props.containerRef}>
+                <h1 className="contactHead">Create Account</h1>
+                <form>
+                    <div>
                         <label htmlFor="firstnName">First Name</label>
-                        <input type="text" name="firstName"  onChange={this.handleFirstName}/>
-                            <br />
+                        <input type="text" name="firstName" value={this.state.input.firstName} onChange={this.handleChange}/> 
+                        <br/>
+                        <span style={{color: "red"}}>{this.state.errors.firstName}</span> 
+                    </div>
+                    <br />
+                    <div>
                         <label htmlFor="lastName">Last Name</label>
-                        <input type="text" name="lastName"  onChange={this.handleLastName}/>
-                            <br />
-                            <label htmlFor="email">Email</label>
-                            <input type="text" name="email"  onChange={this.handleEmail}/>
-                        <br />
-                        <label htmlFor="password">Password</label>
-                        <input type="text" name="password"  onChange={this.handlePassword}/>
-                        <br />
-                        <button type="button" className="btn" onClick={this.createAccount}>Create Account</button>
-                        <br />
-
-                        <div className="separator">OR</div>
-                    </form>
-                </div>
-            )
-        }
+                        <input type="text" name="lastName"  value={this.state.input.lastName} onChange={this.handleChange}/>
+                        <br/>
+                        <span style={{color: "red"}}>{this.state.errors.lastName}</span> 
+                    </div>
+                    <br/>
+                    <div>
+                        <label htmlFor="email">Email</label>
+                        <input type="text" name="email" value={this.state.input.email} onChange={this.handleChange}/>
+                        <br/>
+                        <span style={{color: "red"}}>{this.state.errors.email}</span> 
+                    </div> 
+                    <br />
+                    <div>
+                       <label htmlFor="password">Password</label>
+                        <input type="text" name="password" value={this.state.input.password} onChange={this.handleChange}/>
+                        <br/>
+                        <span style={{color: "red"}}>{this.state.errors.password}</span> 
+                    </div>
+                    <br />
+                    <button type="button" className="btn" onClick={this.handleCreateAccount}>Create Account</button>
+                    <br />
+                    <div className="separator">OR</div>
+                </form>
+            </div>
+        )
+    }
     
 }
 
