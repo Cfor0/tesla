@@ -4,9 +4,6 @@ import Axios from "axios";
 import { withRouter } from "react-router-dom";
 
 class Login extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
     state = {
         email: "",
         password: "",
@@ -28,8 +25,6 @@ class Login extends Component {
         };
 
         Axios.post(`http://localhost:4000/login`, user).then((res) => {
-            // console.log(res);
-            // console.log(res.data);
             if (res.data === "Success") {
                 console.log("It works, save the data");
                 // On trigger of this method will set the loggedIn session to true
@@ -61,7 +56,6 @@ class Login extends Component {
                         onChange={this.handlePassword}
                     />
                     <br />
-                    {/* <Link to="/logged-in"> */}
                     <button
                         type="button"
                         className="btn"
@@ -69,7 +63,6 @@ class Login extends Component {
                     >
                         SIGN IN
                     </button>
-                    {/* </Link> */}
 
                     <div className="separator">OR</div>
                 </form>

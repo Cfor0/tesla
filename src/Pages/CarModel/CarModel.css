@@ -1,10 +1,13 @@
 #car-banner,
 #car-interior {
     height: 100vh;
-    /* width: 100vw; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+html {
+    font-family: sans-serif;
 }
 
 /* Banner Contents */
@@ -47,7 +50,7 @@
     transform: translateX(-50%);
     font-size: 2rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: center;
     align-items: center;
     width: 50%;
@@ -234,7 +237,7 @@
 }
 
 .car-banner__header__bottom__start {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: start;
     width: 70%;
 }
@@ -275,4 +278,44 @@
 }
 
 .performance-two {
+}
+
+@media only screen and (max-width: 760px) {
+    .car-safety,
+    .car-safety-reverse {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .performance-footer {
+        grid-template-columns: 1fr;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        height: auto;
+    }
+
+    .performance,
+    .car-safety,
+    .car-safety-reverse {
+        height: auto;
+    }
+
+    .white__order-now__button,
+    .white__order-now__button__rel,
+    .white__order-now__button__reverse {
+        margin-top: 1rem;
+        position: unset;
+    }
+
+    .car-banner__header__bottom__side {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .performance-banner,
+    .performance-banner-two,
+    .performance-banner-three {
+        background-size: cover;
+    }
 }

@@ -1,10 +1,17 @@
 .header {
-    display: flex;
+    /* display: flex; */
+    display: grid;
     background-color: transparent;
     background: none;
     position: fixed;
     width: 100vw;
     top: 0;
+    /* margin: 15px;
+    margin-top: 15px;
+    z-index: 100; */
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: center;
+    align-items: center;
     margin: 15px;
     margin-top: 15px;
     z-index: 100;
@@ -61,4 +68,34 @@
 
 .header-right > p:hover {
     cursor: pointer;
+}
+
+.header-responsive-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 35px;
+    margin: 10px;
+    font-size: 1.2rem;
+    display: none;
+}
+/* 
+#header-responsive__overlay {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+} */
+
+@media only screen and (max-width: 1100px) {
+    .header-center,
+    .header-right {
+        display: none;
+    }
+
+    .header-responsive-toggle {
+        display: block;
+    }
 }

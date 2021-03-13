@@ -57,27 +57,12 @@ router.post("/login", (req, res) => {
                 res.send(err);
             }
 
+            // If result comes back
             if (result.length > 0) {
                 console.log("SUCCESS");
                 console.log(result);
                 res.send("Success");
             }
-
-            // if (result.length > 0) {
-            // }
-            // let userArray = Object.keys(result);
-            // userArray.filter((item) => {
-            //     let user = result[item];
-            //     if (
-            //         user.email_address === email &&
-            //         user.user_password === password
-            //     ) {
-            //         console.log(user);
-            //         res.send(user);
-            //     } else {
-            //         res.send({ message: "Wrong login Information!" });
-            //     }
-            // });
         }
     );
 });
