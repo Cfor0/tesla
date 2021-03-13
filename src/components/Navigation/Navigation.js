@@ -1,19 +1,30 @@
 import React from "react";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
-// import teslaLogo from "../../teslaLogo2.png";
 
-function Navigation() {
+function Navigation(props) {
+    const changeToggleValue = () => {
+        props.setToggle(!props.toggleValue);
+    };
     return (
         <div className="header">
+            <div
+                className="header-responsive-toggle"
+                onClick={changeToggleValue}
+            >
+                <i
+                    className={`fas fa-${
+                        props.toggleValue ? "times-circle" : "bars"
+                    }`}
+                ></i>
+            </div>
+
             <div className="header-logo">
-                {/* <img className="tesla-logo" src={teslaLogo} alt="tesla logo" /> */}
                 <Link to="/">
                     <svg
                         className="tesla-logo"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 342 35"
-                        // preserveAspectRatio="xMidYMid Meet"
                         width="342"
                         height="35"
                     >
@@ -40,15 +51,12 @@ function Navigation() {
                 <p>
                     <Link to="/models">Model Y</Link>
                 </p>
-                {/* <p>Solar Roof</p> */}
-                {/* <p>Solar Panels</p> */}
                 <p>
                     <Link to="/calculator">EV Calculator</Link>
                 </p>
             </div>
 
             <div className="header-right">
-                {/* <p>Shop</p> */}
                 <p>
                     <Link to="/login">Tesla Account</Link>
                 </p>

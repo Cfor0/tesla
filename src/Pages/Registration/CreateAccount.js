@@ -13,7 +13,6 @@ class CreateAccount extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleCreateAccount = this.handleCreateAccount.bind(this);
-        // this.validate=this.validate.bind(this)
     }
 
     handleChange(event) {
@@ -23,42 +22,27 @@ class CreateAccount extends Component {
         this.setState({
             input,
         });
-        // console.log(input)
     }
 
     handleCreateAccount = (event) => {
         event.preventDefault();
 
         if (this.validate()) {
-            // console.log(this.state);
-
             let input = {};
             input["firstName"] = this.state.input.firstName;
             input["lastName"] = this.state.input.lastName;
             input["email"] = this.state.input.email;
             input["password"] = this.state.input.password;
             this.setState({ input: input });
-            // console.log(input);
 
             Axios.post("http://localhost:4000/createAccount", input).then(
                 (res) => {
                     console.log(res);
                     console.log(res.data);
                     this.props.history.push("/login");
-                    // console.log(this.props);
                     console.log("Should move to next page");
                 }
             );
-
-            // input = {};
-            // input["firstName"] = "";
-            // input["lastName"] = "";
-            // input["email"] = "";
-            // input["password"] = "";
-            // this.setState({ input: input });
-            // console.log(input)
-
-            // alert('The Form has submited');
         }
     };
 

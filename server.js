@@ -8,8 +8,8 @@ const cors = require("cors");
 // Variables
 const PORT = 4000 || process.argv.PORT;
 
-// Middleware
 const app = express();
+// Middleware
 app.use(cors());
 app.use(express.json());
 
