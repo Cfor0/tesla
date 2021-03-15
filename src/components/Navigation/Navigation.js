@@ -3,6 +3,9 @@ import "./Navigation.css";
 import { Link } from "react-router-dom";
 
 function Navigation(props) {
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
     const changeToggleValue = () => {
         props.setToggle(!props.toggleValue);
     };
@@ -20,7 +23,7 @@ function Navigation(props) {
             </div>
 
             <div className="header-logo">
-                <Link to="/">
+                <Link to="/" onClick={scrollToTop}>
                     <svg
                         className="tesla-logo"
                         xmlns="http://www.w3.org/2000/svg"
@@ -39,26 +42,38 @@ function Navigation(props) {
 
             <div className="header-center">
                 <p>
-                    <Link to="/models">Model S</Link>
+                    <Link to="/model/models" onClick={scrollToTop}>
+                        Model S
+                    </Link>
                 </p>
 
                 <p>
-                    <Link to="/models">Model 3</Link>
+                    <Link to="/model/model3" onClick={scrollToTop}>
+                        Model 3
+                    </Link>
                 </p>
                 <p>
-                    <Link to="/models">Model X</Link>
+                    <Link to="/model/modelx" onClick={scrollToTop}>
+                        Model X
+                    </Link>
                 </p>
                 <p>
-                    <Link to="/models">Model Y</Link>
+                    <Link to="/model/modely" onClick={scrollToTop}>
+                        Model Y
+                    </Link>
                 </p>
                 <p>
-                    <Link to="/calculator">EV Calculator</Link>
+                    <Link to="/calculator" onClick={scrollToTop}>
+                        EV Calculator
+                    </Link>
                 </p>
             </div>
 
             <div className="header-right">
                 <p>
-                    <Link to="/login">Tesla Account</Link>
+                    <Link to="/login" onClick={scrollToTop}>
+                        Tesla Account
+                    </Link>
                 </p>
             </div>
         </div>

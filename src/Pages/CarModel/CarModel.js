@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import ScrollArrow from "../../components/ScrollArrow/ScrollArrow";
+import ModelData from "./CarModelData.js";
 
 import "./CarModel.css";
 
@@ -7,11 +8,19 @@ const CarModel = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
     return (
         <div>
-            <section id="car-banner">
+            <section
+                id="car-banner"
+                style={{
+                    backgroundImage: `url('${ModelData[props.path].img}')`,
+                }}
+            >
                 <header id="car-banner__header">
-                    <h1 id="car-banner__header__title">Model S</h1>
+                    <h1 id="car-banner__header__title">
+                        {ModelData[props.path].title}
+                    </h1>
                 </header>
                 <div id="car-banner__header__bottom">
                     <div className="car-banner__header__bottom__column">
