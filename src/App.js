@@ -10,6 +10,7 @@ import LoggedIn from "./Pages/LoggedIn/LoggedIn";
 
 import { Route, Switch, Link } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/Footer";
 
 import React, { useState } from "react";
 
@@ -86,6 +87,7 @@ function App() {
                     <Route exact path="/contact" component={Contact} />
                 </Switch>
             </div>
+            {/* <Footer /> */}
         </>
     );
 }

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./Calculator.css";
+import Footer from "../../components/Footer/Footer";
 
 class Calculator extends Component {
     state = {
@@ -8,10 +10,24 @@ class Calculator extends Component {
         travelTime: "",
         gasTotal: "",
         EVTotal: "",
+        img: "",
     };
 
     componentDidMount() {
         window.scrollTo(0, 0);
+
+        axios.get("http://localhost:4000/calculator").then(
+            (result) => {
+                const gif = result.data;
+                this.setState({
+                    img: gif,
+                });
+            },
+
+            (error) => {
+                console.log("Error");
+            }
+        );
     }
 
     onChangeHandler = (e) => {
@@ -198,6 +214,15 @@ class Calculator extends Component {
                             >
                                 Benefits of switching to an electric car
                             </h1>
+                            <div
+                                style={{
+                                    display: "grid",
+                                    justifyContent: "center",
+                                    margin: "2rem 2rem",
+                                }}
+                            >
+                                <img src={this.state.img} alt="gif" />
+                            </div>
                             <div id="calculator-container__output__inner">
                                 <div className="calculator-container__column">
                                     <div className="vehicle-type__result">

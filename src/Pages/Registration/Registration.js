@@ -25,6 +25,12 @@ class Registration extends Component {
         }));
     }
 
+    changeLoginState = (state) => {
+        this.setState({
+            isLogginActive: !state,
+        });
+    };
+
     render() {
         const { isLogginActive } = this.state;
         const current = isLogginActive ? "CREATE ACCOUNT" : "SIGN IN";
@@ -36,10 +42,15 @@ class Registration extends Component {
                     ref={(ref) => (this.container = ref)}
                 >
                     {isLogginActive && (
-                        <Login containerRef={(ref) => (this.current = ref)} />
+                        <Login
+                            loginState={isLogginActive}
+                            containerRef={(ref) => (this.current = ref)}
+                        />
                     )}
                     {!isLogginActive && (
                         <CreateAccount
+                            changeState={this.changeLoginState}
+                            loginState={this.isLogginActive}
                             containerRef={(ref) => (this.current = ref)}
                         />
                     )}

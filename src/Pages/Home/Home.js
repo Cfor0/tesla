@@ -32,8 +32,8 @@ function Home() {
                             caption="Order Online for Touchless Delivery"
                         />
                     </div>
-                    <Footer />
                 </section>
+                <Footer />
             </div>
         </>
     );
