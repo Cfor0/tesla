@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import Navigation from "../../components/Navigation/Navigation.js";
 import Title from "../../components/Title/Title";
@@ -6,6 +6,9 @@ import ScrollArrow from "../../components/ScrollArrow/ScrollArrow";
 import Footer from "../../components/Footer/Footer";
 
 function Home() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <div className="App">

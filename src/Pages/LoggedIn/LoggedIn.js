@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import "./LoggedIn.css";
 
 const LoggedIn = (props) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const signOut = () => {
         sessionStorage.removeItem("loggedIn");
         props.history.push("/login");

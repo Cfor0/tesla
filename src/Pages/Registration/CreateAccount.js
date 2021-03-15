@@ -15,6 +15,10 @@ class CreateAccount extends Component {
         this.handleCreateAccount = this.handleCreateAccount.bind(this);
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     handleChange(event) {
         let input = this.state.input;
         input[event.target.name] = event.target.value;
