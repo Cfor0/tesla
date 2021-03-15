@@ -11,6 +11,10 @@ class Registration extends Component {
         };
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     changeState() {
         const isLogginActive = this.state;
         if (isLogginActive) {

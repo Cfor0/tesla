@@ -10,6 +10,10 @@ class Calculator extends Component {
         EVTotal: "",
     };
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     onChangeHandler = (e) => {
         this.setState({
             [e.target.name]: e.target.value,

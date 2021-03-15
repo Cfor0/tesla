@@ -13,6 +13,10 @@ class Contact extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     handleChange(event) {
         let input = this.state.input;
         input[event.target.name] = event.target.value;

@@ -9,6 +9,10 @@ class Login extends Component {
         password: "",
     };
 
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     handleEmail = (event) => {
         this.setState({ email: event.target.value });
     };

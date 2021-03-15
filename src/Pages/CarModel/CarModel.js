@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ScrollArrow from "../../components/ScrollArrow/ScrollArrow";
 
 import "./CarModel.css";
 
 const CarModel = (props) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div>
             <section id="car-banner">
