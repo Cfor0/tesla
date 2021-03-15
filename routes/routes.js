@@ -1,13 +1,19 @@
 const express = require("express");
 const router = express.Router();
 const mysql = require("mysql");
+require("dotenv").config();
 
-// Database Parameters
+// Variables
+const request = require("request");
+const gifApiKey = process.env.API_KEY;
+const gifLimit = 2;
+const gifIndex = gifLimit - 1;
+
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "devuser",
-    password: "password",
-    database: "tesla_db",
+    host: `${process.env.DB_HOST}`,
+    user: `${process.env.DB_USER}`,
+    password: `${process.env.DB_PASSWORD}`,
+    database: `${process.env.DB_DATABASE}`,
 });
 
 // Establish Database Connection
@@ -65,6 +71,30 @@ router.post("/login", (req, res) => {
             }
         }
     );
+});
+
+router.get("/calculator", (req, res) => {
+    try {
+        const item = "wow";
+
+        request(
+            `http://api.giphy.com/v1/gifs/search?q=${item}&limit=${gifLimit}&api_key=${gifApiKey}`,
+            (err, response, body) => {
+                if (err) {
+                    res.render("info", { gif: null, error: "Gif Not Found" });
+                } else {
+                    // let gif = response.data[0].images.fixed_height.url;
+                    // console.log(response);
+                    const gif = JSON.parse(body).data[gifIndex].images.original
+                        .url;
+                    // Send result to page
+                    res.send(gif);
+                }
+            }
+        );
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 module.exports = router;

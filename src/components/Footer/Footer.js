@@ -1,9 +1,10 @@
-import React from 'react';
-import './Footer.css'
+import React from "react";
+import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
     return (
-        <div className='footer-container'>
+        <div className="footer-container">
             <ul>
                 <li>
                     <a href="#" className="fa fa-facebook"></a>
@@ -18,11 +19,13 @@ function Footer() {
                     <a href="#" className="fa fa-youtube"></a>
                 </li>
                 <li>
-                    <a href="#" className='footer-contact'>Contact</a>
+                    <Link to="/contact" className="footer-contact">
+                        Contact
+                    </Link>
                 </li>
             </ul>
         </div>
-    )
+    );
 }
 
 export default Footer;

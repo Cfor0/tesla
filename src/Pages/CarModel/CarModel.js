@@ -3,6 +3,7 @@ import ScrollArrow from "../../components/ScrollArrow/ScrollArrow";
 import ModelData from "./CarModelData.js";
 
 import "./CarModel.css";
+import Footer from "../../components/Footer/Footer";
 
 const CarModel = (props) => {
     useEffect(() => {
@@ -285,6 +286,7 @@ const CarModel = (props) => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };

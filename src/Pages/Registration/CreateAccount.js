@@ -48,6 +48,8 @@ class CreateAccount extends Component {
                 }
             );
         }
+
+        this.props.changeState(this.props.loginState);
     };
 
     validate() {
