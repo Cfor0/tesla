@@ -23,6 +23,10 @@ function App() {
         setToggled(!toggled);
     };
 
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <>
             <div
@@ -31,23 +35,35 @@ function App() {
                 }`}
             >
                 <p onClick={changeToggleValue}>
-                    <Link to="/models">Model S</Link>
+                    <Link to="/model/models" onClick={scrollToTop}>
+                        Model S
+                    </Link>
                 </p>
 
                 <p onClick={changeToggleValue}>
-                    <Link to="/models">Model 3</Link>
+                    <Link to="/model/model3" onClick={scrollToTop}>
+                        Model 3
+                    </Link>
                 </p>
                 <p onClick={changeToggleValue}>
-                    <Link to="/models">Model X</Link>
+                    <Link to="/model/modelx" onClick={scrollToTop}>
+                        Model X
+                    </Link>
                 </p>
                 <p onClick={changeToggleValue}>
-                    <Link to="/models">Model Y</Link>
+                    <Link to="/model/modely" onClick={scrollToTop}>
+                        Model Y
+                    </Link>
                 </p>
                 <p onClick={changeToggleValue}>
-                    <Link to="/calculator">EV Calculator</Link>
+                    <Link to="/calculator" onClick={scrollToTop}>
+                        EV Calculator
+                    </Link>
                 </p>
                 <p onClick={changeToggleValue}>
-                    <Link to="/login">Tesla Account</Link>
+                    <Link to="/login" onClick={scrollToTop}>
+                        Tesla Account
+                    </Link>
                 </p>
             </div>
             <div>
@@ -59,7 +75,13 @@ function App() {
                     {loggedIn !== null && (
                         <Route exact path="/logged-in" component={LoggedIn} />
                     )}
-                    <Route exact path="/models" component={CarModel} />
+                    <Route
+                        exact
+                        path="/model/:type"
+                        render={(props) => (
+                            <CarModel path={props.match.params.type} />
+                        )}
+                    />
                     <Route exact path="/calculator" component={Calculator} />
                     <Route exact path="/contact" component={Contact} />
                 </Switch>
